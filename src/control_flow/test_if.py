@@ -13,19 +13,22 @@ in other languages.
 def test_if_statement():
     """IF statement"""
 
-    number = 0
-    conclusion = ''
+    for number, expected in [
+        (0, 'Number equals to zero'),
+        (-5, 'Number is less than zero')
+    ]:
+        conclusion = ''
 
-    if number < 0:
-        conclusion = 'Number is less than zero'
-    elif number == 0:
-        conclusion = 'Number equals to zero'
-    elif number < 1:
-        conclusion = 'Number is greater than zero but less than one'
-    else:
-        conclusion = 'Number bigger than or equal to one'
+        if number < 0:
+            conclusion = 'Number is less than zero'
+        elif number == 0:
+            conclusion = 'Number equals to zero'
+        elif number < 1:
+            conclusion = 'Number is greater than zero but less than one'
+        else:
+            conclusion = 'Number bigger than or equal to one'
 
-    assert conclusion == 'Number equals to zero'
+        assert conclusion == expected
 
 
 def test_grade_letter():
